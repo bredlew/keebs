@@ -1,0 +1,164 @@
+const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+   /* 0: main layer
+    * ,-----------------------------------------------------------------------.
+    * |Esc  | q   | w   | e   | r   | t   | y   | u   | i   | o   | p   | BS  |
+    * |-----------------------------------------------------------------------|
+    * |Tab  | a   | s   | d   | f   | g   | h   | j   | k   | l   | ;   | Ret |
+    * |-----------------------------------------------------------------------|
+    * |Shift| z   | x   | c   | v   | b   | n   | m   |,   | .   | /   | Shift|
+    * |-----------------------------------------------------------------------|
+    * |FN3  | LCTL| LGUI| LALT|Lower|   Space   |Raise|Left |Down | Up  |Right|
+    * `-----------------------------------------------------------------------'
+    */
+  [0] = KEYMAP_GRID(
+       ESC,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    BSPC,
+       TAB, A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, ENT,
+       LSFT, Z,    X,    C,    V,    B,    N,    M,    DOT, COMM, SLSH, RSFT,
+       FN3, LCTL, LGUI, LALT, FN0, FN4,  FN4,  FN1,  LEFT, DOWN, UP,   RGHT),
+
+   /* 1: fn left/lower layer
+    * The top row are standard numbers, 1-9, and minus and equals.
+    * Middle 2 rows add symbols back.
+	* Bottom row changes arrow to Home, Page Up, Page Down, and End.
+    * ,-----------------------------------------------------------------------.
+    * |     |     |     |     |     |     |  -  |  7  |  8  |  9  |  *  |     |
+    * |-----------------------------------------------------------------------|
+    * |  `  |     |     |     |     |     |     |     |     |  [  |  ]  |  \  |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |     |     |     |     |     |  '  |     |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |   Space   |     |Home |PgDn |PgUp | End |
+    * `-----------------------------------------------------------------------'
+    */
+  [1] = KEYMAP_GRID(
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,  7  ,  8  ,  9  ,  -  ,  =  , 
+       GRV, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, BSLS ,
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, QUOT, TRNS,
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, HOME, PGDN, PGUP, END ),
+
+  
+   /* 2: Symbols right/raise layer
+	* Top row is number symbols.
+	* Adds alt symbbols for brackets, etc.
+	* Bottom row is media control.
+    * ,-----------------------------------------------------------------------.
+    * |  !  |  @  |  #  |  $  |  %  |  ^  |  &  |  *  |  (  |  )  |  _  |  +  |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |     |     |     |     |  {  |  }  |  |  |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |     |     |     |     |     |  "  |     |
+    * |-----------------------------------------------------------------------|
+    * |     |NextT|PrevT|     |     |     | Esc |     |Mute |Vol- |Vol+ | P/P |
+    * `-----------------------------------------------------------------------'
+    */
+  [2] = KEYMAP_GRID(
+       FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25, FN10, FN13, FN27, FN26,
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, FN11, FN14, TRNS,
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, FN28, TRNS,
+       TRNS, MNXT, MPRV, TRNS, TRNS, TRNS, ESC,  TRNS, MUTE, VOLD, VOLU, MPLY ),
+	   
+   /* 3: fn bottom left corner layer
+	*	"arrow section" gives backlight control
+    * ,-----------------------------------------------------------------------.
+    * | F1  | F2  | F3  | F4  |F5   | F6  | F7  | F8  | F9  | F10 | F11 | F12 |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |     |     |     |     |     |     |     |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |     |     |     |     |     |     |     |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |     |     |     |     |Light|BL UP|BL DN|
+    * `-----------------------------------------------------------------------'
+    */
+  [3] = KEYMAP_GRID(
+       F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,FUNC100,FUNC101,FUNC102,
+	   
+  /* 4: Numpad layer
+    * ,-----------------------------------------------------------------------.
+    * |     | Num7| Num8| Num9|     |     |     |     |     |     |     |     |
+    * |-----------------------------------------------------------------------|
+    * |     | Num4| Num5| Num6|     |     |     |     |     |     |     |     |
+    * |-----------------------------------------------------------------------|
+    * |     | Num1| Num2| Num3|     |     |     |     |     |     |     |     |
+    * |-----------------------------------------------------------------------|
+    * |     | Num0| Num0| Num.|     |     |     |     |     |     |     |     |
+    * `-----------------------------------------------------------------------'
+    */
+  [4] = KEYMAP_GRID(
+       F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,
+       TRNS, FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25, MINS, FN26, PAST,
+       TRNS, FN27, QUOT, FN28, GRV,  FN29, COMM, DOT,  RBRC, FN13, FN14, FN15,
+       TRNS, MNXT, MPRV, TRNS, TRNS, TRNS, ESC,  TRNS, MUTE, VOLD, VOLU, MPLY ),
+	   
+	   /* 5: Gaming Layer
+    * ,-----------------------------------------------------------------------.
+    * |     |     |     |     |     |     |     |     |     |     |     |     |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |     |     |     |     |     |     |     |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |     |     |     |     |     |     |     |
+    * |-----------------------------------------------------------------------|
+    * |     |     |     |     |     |     |     |     |     |     |     |     |
+    * `-----------------------------------------------------------------------'
+    */
+  [4] = KEYMAP_GRID(
+       F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,
+       TRNS, FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25, MINS, FN26, PAST,
+       TRNS, FN27, QUOT, FN28, GRV,  FN29, COMM, DOT,  RBRC, FN13, FN14, FN15,
+       TRNS, MNXT, MPRV, TRNS, TRNS, TRNS, ESC,  TRNS, MUTE, VOLD, VOLU, MPLY ),
+};
+
+enum macro_id {
+    M_P0,
+    M_P1,
+    M_P2,
+    M_P3,
+    M_P4,
+    M_P5,
+    M_USERNAME
+};
+
+const uint16_t PROGMEM fn_actions[] = {
+  [0] = ACTION_LAYER_MOMENTARY(1),      // left/lower layer
+  [1] = ACTION_LAYER_MOMENTARY(2),      // right/raise layer
+  [2] = ACTION_LAYER_MOMENTARY(3),      // Function Layer
+  [3] = ACTION_LAYER_MOMENTARY(4),      // Numpad Layer
+  [4] = ACTION_MODS_TAP_KEY(SPC, FN3),  // Tap for Spacebar, Hold for Numpad Layer
+  [5] = ,
+  [6] = ,
+  [7] = ,
+  [8] = ,
+  // Braces
+  [10] = ACTION_MODS_KEY(MOD_LSFT, KC_9),     // (
+  [11] = ACTION_MODS_KEY(MOD_LSFT, KC_LBRC),  // {
+  [12] = ACTION_MODS_KEY(MOD_LSFT, KC_COMMA), // <
+  [13] = ACTION_MODS_KEY(MOD_LSFT, KC_0),     // )
+  [14] = ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),  // }
+  [15] = ACTION_MODS_KEY(MOD_LSFT, KC_DOT),   // >
+  // Combo
+  [16] = ACTION_MODS_KEY(MOD_LALT | MOD_LCTL, KC_DEL), // Ctrl+Alt+Delete
+  [17] = ACTION_MODS_KEY(MOD_LSFT | MOD_LCTL, KC_ESC), // Ctrl+Shft+Escape
+  // Symbols
+  [18] = ACTION_MODS_KEY(MOD_LSFT, KC_1),     // !
+  [19] = ACTION_MODS_KEY(MOD_LSFT, KC_2),     // @
+  [20] = ACTION_MODS_KEY(MOD_LSFT, KC_3),     // #
+  [21] = ACTION_MODS_KEY(MOD_LSFT, KC_4),     // $
+  [22] = ACTION_MODS_KEY(MOD_LSFT, KC_5),     // %
+  [23] = ACTION_MODS_KEY(MOD_LSFT, KC_6),     // ^
+  [24] = ACTION_MODS_KEY(MOD_LSFT, KC_7),     // &
+  [25] = ACTION_MODS_KEY(MOD_LSFT, KC_8),     // *
+  [26] = ACTION_MODS_KEY(MOD_LSFT, KC_EQL),   // +
+  [27] = ACTION_MODS_KEY(MOD_LSFT, KC_MINUS), // _
+  [28] = ACTION_MODS_KEY(MOD_LSFT, KC_QUOTE), // "
+  [29] = ACTION_MODS_KEY(MOD_LSFT, KC_GRAVE), // ~
+  [30] = ACTION_MODS_KEY(MOD_LSFT, KC_BSLS),  // |
+  // Debugging
+  [31] = ACTION_MODS_KEY(MOD_LSFT, KC_F11),            // Step into
+  [32] = ACTION_MODS_KEY(MOD_LSFT | MOD_LCTL, KC_F10), // Set cursor to line
+  // Backlight
+  [100] = ACTION_BACKLIGHT_TOGGLE(),
+  [101] = ACTION_BACKLIGHT_INCREASE(),
+  [102] = ACTION_BACKLIGHT_DECREASE()
+ };
